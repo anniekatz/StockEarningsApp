@@ -1,0 +1,77 @@
+S&P 500 Company Post-Earnings Scraper
+
+Author: Ann Katz
+Copyright: Ann Katz 2021
+Created with Python 3.9 in Pycharm
+
+TO INSTALL PROGRAM AS EXECUTABLE:
+-In most cases, you need to have Python 3 installed and added to PATH.
+-You need to have Pyinstaller and a PATH variable to the folder of its location, 
+an (upgraded) pip PATH environment variable, and Python 3.
+-Navigate to program folder sp-500-earnings in the command line.
+-Run "python install.py" (or "python3 install.py")
+-A folder called dist will be created, with the executable file "gui.exe" inside. 
+Executable may take a few moments to run.
+
+Pickle file and icons folder are also necessary for program to run correctly.
+They are installed in the dist folder along with the executable.
+
+TO RUN PROGRAM GUI FROM COMMAND LINE INSTEAD:
+-Program needs Python 3.9 installed in computer and added to PATH to work properly.
+-Before running, make sure you have the proper requirements installed with pip.
+-Make sure pip is updated and added to PATH.
+-Install all the necessary dependencies by running (from the sp-500-earnings folder path):
+        pip install -r requirements.txt
+-You may also use a Python virtual environment with the packages necessary installed into that environment.
+-To run the file, navigate to the "sp-500-earnings" program folder in the
+command line and run the gui.py file:
+    python gui.py (or python3 gui.py)
+
+*Note: It may take some time for the program to open. 
+*I have added progress bars on the console to track speed if ran from gui.py.
+
+
+
+IN PROGRAM FEATURES:
+
+Sort columns by clicking the 'SORT-BY' buttons on the right side of the page
+Columns can also be clicked to be sorted.
+
+Search for a company with the search bar and search button.
+Navigate to home, help, or exit the program from the right side of the window.
+
+The current price for each company is updated upon program open.
+
+Choose a company to display:
+    -Earnings data for the past 10 earnings releases including
+    -The average stock price change (in dollars and percent) for the 24-hours in market day after earnings report
+    -Exact price changes for the past 10 earnings by dollar amount and percentage
+    -An interactive stock chart marking the past earnings. Blue triangles represent the change at earnings dates.
+
+
+API Documentation:
+
+*Please note: for some URLs shown below, the example ticker of TSLA is used.
+Every stock ticker within the S&P 500 was used in its place.
+    
+-Historical stock prices are taken from Yahoo Finance using the 'yfinance' Python package 
+	from: https://pypi.org/project/yfinance/
+
+Earnings dates and real time prices are scraped with BeautifulSoup from ZACKS.com
+        -Earnings announcements from: https://www.zacks.com/stock/research/TSLA/earnings-announcements
+        -Next earnings reports dates from: https://www.zacks.com/stock/quote/TSLA/detailed-estimates
+        -Current prices from: http://quote-feed.zacks.com/?t=TSLA
+
+Current S&P 500 Company information is taken from Wikipedia
+	from: https://en.wikipedia.org/wiki/List_of_S%26P_500_companies
+
+Company summaries are scraped from MarketWatch
+	from: https://www.marketwatch.com/investing/stock/TSLA
+
+I used Tkinter to create the GUI and the Pycharm IDE (JetBrains) to write the source code.
+Packages used are listed in the requirements.txt document.
+
+* Please note: no part of this program is intended as investment advice.
+This program is not intended to be used as a predictive service and is not
+affiliated with any brokerage or API. Please do your own research before making
+investment decisions or installation decisions.
